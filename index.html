@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StatiCalc - kalkulator statystyczny</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main class="optionPanel">
+        <div class="tile" id="analyst">
+            <img src="image/calculator.png" alt="kalkulator" class="icon">
+            <p class="desc">Analiza statystyczna badanej cechy</p>
+        </div>
+        <div class="tile">
+            <img src="image/calculator.png" alt="kalkulator" class="icon">
+            <p class="desc">Analiza statystyczna badanej cechy</p>
+        </div>
+        <div class="tile">
+            <img src="image/calculator.png" alt="kalkulator" class="icon">
+            <p class="desc">Analiza statystyczna badanej cechy</p>
+        </div>
+        <div class="tile">
+            <img src="image/calculator.png" alt="kalkulator" class="icon">
+            <p class="desc">Analiza statystyczna badanej cechy</p>
+        </div>
+        <div class="tile">
+            <img src="image/calculator.png" alt="kalkulator" class="icon">
+            <p class="desc">Analiza statystyczna badanej cechy</p>
+        </div>
+        <div class="tile">
+            <img src="image/calculator.png" alt="kalkulator" class="icon">
+            <p class="desc">Analiza statystyczna badanej cechy</p>
+        </div>
+    </main>
+    <section class="analystSection">
+        <form action="" class="analystDataForm">
+            <div class="dataCell">
+                <label for="n" class="dataLabel">Liczebność prób</label>
+                <input type="number" name="n" class="dataInput" class="n">
+            </div>
+            <div class="dataCell">
+                <label for="xmax" class="dataLabel">Wartość maksymalna</label>
+                <input type="number" name="xmax" class="dataInput" class="xmax">
+            </div>
+            <div class="dataCell">
+                <label for="xmin" class="dataLabel">Wartość minimalna</label>
+                <input type="number" name="xmin" class="dataInput" class="xmin">
+            </div>
+            <input type="button" value="Analizuj" class="dataBtn">
+        </form>
+        <div class="results">
+
+        </div>
+    </section>
+    <script type="text/javascript" src="js/analyst.js"></script>
+</body>
+</html>
