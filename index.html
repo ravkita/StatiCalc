@@ -13,9 +13,9 @@
             <img src="image/calculator.png" alt="kalkulator" class="icon">
             <p class="desc">Analiza statystyczna badanej cechy</p>
         </div>
-        <div class="tile">
+        <div class="tile" id="pearson">
             <img src="image/calculator.png" alt="kalkulator" class="icon">
-            <p class="desc">Analiza statystyczna badanej cechy</p>
+            <p class="desc">Współczynnik korelacji Pearsona</p>
         </div>
         <div class="tile">
             <img src="image/calculator.png" alt="kalkulator" class="icon">
@@ -54,6 +54,40 @@
 
         </div>
     </section>
+    <section class="pearsonSection">
+        <div class="pearsonBox">
+            <div class="dataCell">
+                <label for="n" class="dataLabel">Liczebność prób</label>
+                <input type="number" name="pearsonN" class="dataInput pearsonN" style="width: 300px;">
+                <input type="button" value="Stwórz" class="dataBtn" id="pearsonBtn" style="width: 315px;">
+            </div>
+            <div class="pearsonTable">
+                <div class="pearsonX">
+                    <p>Wartości X</p>
+                </div>
+                <div class="pearsonY">
+                    <p>Wartości Y</p>
+                </div>
+                <div class="pearsonX pearsonXAvg">
+                    <p>x-średniaX</p>
+                </div>
+                <div class="pearsonY pearsonYAvg">
+                    <p>y-średniaY</p>
+                </div>
+                <div class="pearsonX pearsonYXAvgProd">
+                    <p>(x-średniaX)(y-średniaY)</p>
+                </div>
+                <div class="pearsonX pearsonXAvgPow">
+                    <p>(x-średniaX)<sup>2</sup></p>
+                </div>
+                <div class="pearsonY pearsonYAvgPow">
+                    <p>(Y-średniaY)<sup>2</sup></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <script type="text/javascript" src="js/analyst.js"></script>
+    <script type="text/javascript" src="js/pearson.js"></script>
 </body>
 </html>
