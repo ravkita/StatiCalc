@@ -80,7 +80,7 @@ function avgValue(){
         const resultTxt = document.createElement("p");
         pearsonBox.appendChild(resultTxt);
         resultTxt.className = "resultText";
-        resultTxt.innerHTML = `Średnia X wynosi ${parseFloat(avgx)}, a średnia Y wynosi ${parseFloat(avgy)}`;
+        resultTxt.innerHTML = `Średnia X wynosi <strong>${parseFloat(avgx)}</strong>, a średnia Y wynosi <strong>${parseFloat(avgy)}</strong>`;
 
         const sum = document.createElement("p");
         document.querySelector('.pearsonY').appendChild(sum);
@@ -161,4 +161,38 @@ function minusAvgPow(){
     document.querySelector('.pearsonXAvgPow').appendChild(pearsonXAvgPow);
     pearsonXAvgPow.innerHTML = sumXAvgPow.toFixed(2);
     pearsonXAvgPow.style.fontWeight = 700;
+    factorPearson();
+}
+
+let r = 0;
+let covxy = 0;
+let sx = 0;
+let sy = 0;
+function factorPearson(){
+
+    r = (sumYXAvgProd)/(Math.sqrt(sumXAvgPow*sumYAvgPow));
+    covxy = sumYXAvgProd/l;
+    sx = Math.sqrt(sumXAvgPow/l);
+    sy = Math.sqrt(sumYAvgPow/l);
+    const resultTxt = document.createElement("p");
+    pearsonBox.appendChild(resultTxt);
+    resultTxt.className = "resultText";
+    resultTxt.innerHTML = `Współczynnik korelacji liniowej Pearsona <strong>r=${r.toFixed(3)}</strong><br />Kowariancja <strong>covxy=${covxy.toFixed(2)}</strong><br />Wariancja X <strong>S(x)=${sx.toFixed(2)}</strong>, wariancja Y <strong>S(y)=${sy.toFixed(2)}</strong><br /> `;
+    regressionFunction();
+}
+
+let ax = 0;
+let ay = 0;
+let bx = 0;
+let by = 0;
+function regressionFunction(){
+    ax = covxy/(Math.pow(sx, 2));
+    ay = covxy/(Math.pow(sy, 2));
+    bx = avgx-(ax*avgy);
+    by = avgy-(ay*avgx);
+    const resultTxt = document.createElement("p");
+    pearsonBox.appendChild(resultTxt);
+    resultTxt.className = "resultText";
+    resultTxt.innerHTML = `Zmienna <strong>ax=${ax.toFixed(4)}</strong><br />Zmienna <strong>ay=${ay.toFixed(4)}</strong><br />Zmienna <strong>bx=${bx.toFixed(4)}</strong><br /> Zmienna <strong>by=${by.toFixed(4)}</strong><br /> Funkcja regresji zmiennej zależnej X: <strong>x=${ax.toFixed(4)}Y+${bx.toFixed(4)}</strong><br /> Funkcja regresji zmiennej zależnej Y: <strong>y=${ay.toFixed(4)}X+${by.toFixed(4)}</strong>`;
+
 }

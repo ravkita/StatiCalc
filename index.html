@@ -17,9 +17,9 @@
             <img src="image/calculator.png" alt="kalkulator" class="icon">
             <p class="desc">Współczynnik korelacji Pearsona</p>
         </div>
-        <div class="tile">
+        <div class="tile" id="trend">
             <img src="image/calculator.png" alt="kalkulator" class="icon">
-            <p class="desc">Analiza statystyczna badanej cechy</p>
+            <p class="desc">Funkcja trendu (szer. czasowy)</p>
         </div>
         <div class="tile">
             <img src="image/calculator.png" alt="kalkulator" class="icon">
@@ -87,7 +87,43 @@
             </div>
         </div>
     </section>
+    <section class="trendSection">
+        <div class="trendBox">
+            <div class="dataCell">
+                <label for="n" class="dataLabel">Liczebność prób</label>
+                <input type="number" name="trendN" class="dataInput trendN" style="width: 300px;">
+                <input type="button" value="Stwórz" class="dataBtn" id="trendBtn" style="width: 315px;">
+            </div>
+            <div class="trendTable">
+                <div class="trendX">
+                    <p>Wartości t</p>
+                </div>
+                <div class="trendY">
+                    <p>Wartości Yt</p>
+                </div>
+                <div class="trendX trendProd">
+                    <p>Yt * t</p>
+                </div>
+                <div class="trendY trendPow">
+                    <p>t<sup>2</sup></p>
+                </div>
+                <div class="trendX trendF">
+                    <p>Funkcja Y</p>
+                </div>
+                <div class="trendX prodF">
+                    <p>Yt - Funkcja Y</p>
+                </div>
+                <div class="trendY powProdF">
+                    <p>(Yt - Funkcja Y)<sup>2</sup></p>
+                </div>
+                <div class="trendY tMinusTAvg">
+                    <p>(t - średnia t)<sup>2</sup></p>
+                </div>
+            </div>
+        </div>
+    </section>
     <script type="text/javascript" src="js/analyst.js"></script>
     <script type="text/javascript" src="js/pearson.js"></script>
+    <script type="text/javascript" src="js/trend.js"></script>
 </body>
 </html>

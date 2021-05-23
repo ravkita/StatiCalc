@@ -206,6 +206,15 @@ span{
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
+    overflow-y: scroll;
+}
+.pearsonBox::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 30px;
+
+}
+.pearsonBox::-webkit-scrollbar-thumb{
+    background-color:rgb(42, 173, 130);
 }
 .pearsonTable{
     margin: 50px auto;
@@ -237,6 +246,77 @@ span{
     margin-bottom: 5px;
 }
 .pearsonTable p{
+    margin: 5px auto;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.trendSection{
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 999;
+    width: calc(100vw - 20px);
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    transition: all .3s ease-in;
+}
+.trendBox{
+    width: 90%;
+    height: 90%;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow-y: scroll;
+}
+.trendBox::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 30px;
+
+}
+.trendBox::-webkit-scrollbar-thumb{
+    background-color:rgb(42, 173, 130);
+}
+.trendTable{
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.trendY, .trendX{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #222;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.trendX:first-child{
+    border-left: 1px solid #222;
+}
+.trendY input, .trendX input{
+    font-size: 16px;
+    margin: 7.5px auto;
+    padding: 1px;
+    text-align: center;
+}
+.trendYValue, .trendXValue{
+    width: 50px;
+    margin-bottom: 5px;
+}
+.trendTable p{
     margin: 5px auto;
     font-size: 16px;
     white-space: nowrap;
