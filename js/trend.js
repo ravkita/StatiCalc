@@ -35,6 +35,7 @@ function tDataInput(){
     });
 }
 let tcurrentPosition = 0;
+
 function tValueInput(){
     const trendYTab = document.querySelectorAll(".trendYValue");
     const trendXTab = document.querySelectorAll(".trendXValue");
@@ -82,6 +83,16 @@ function prod(){
             document.querySelector('.trendProd').appendChild(trendProd);
             trendProd.innerHTML = prodTab[i].toFixed(2);
         }
+        const trendProd = document.createElement("p");
+        document.querySelector('.trendProd').appendChild(trendProd);
+        trendProd.innerHTML = `<strong>${prodSum.toFixed(2)}</strong>`;
+        const trendtSum = document.createElement("p");
+        document.querySelector(".trendX").appendChild(trendtSum);
+        trendtSum.innerHTML = `<strong>${tSum.toFixed(2)}</strong>`;
+
+        const trendYSum = document.createElement("p");
+        document.querySelector(".trendY").appendChild(trendYSum);
+        trendYSum.innerHTML = `<strong>${ySum.toFixed(2)}</strong>`;
         tMinusTAvg();
     }
 }
@@ -97,6 +108,9 @@ function tPow(){
             document.querySelector('.trendPow').appendChild(trendPow);
             trendPow.innerHTML = tPowTab[i].toFixed(2);
         }
+        const trendPow = document.createElement("p");
+        document.querySelector('.trendPow').appendChild(trendPow);
+        trendPow.innerHTML = `<strong>${powSum.toFixed(2)}</strong>`;
         trendFunction();
     }
 }
@@ -113,6 +127,9 @@ function trendFunction(){
         document.querySelector('.trendF').appendChild(trendF);
         trendF.innerHTML = trendFTab[i];
     }
+    const trendF = document.createElement("p");
+    document.querySelector('.trendF').appendChild(trendF);
+    trendF.innerHTML = "<strong>---</strong>";
     prodMinusF();
     const resultTxt = document.createElement("p");
     trendBox.appendChild(resultTxt);
@@ -134,10 +151,16 @@ function prodMinusF(){
         document.querySelector('.powProdF').appendChild(powProdF);
         powProdF.innerHTML = powProdFTab[i].toFixed(4);
     }
+    const prodF = document.createElement("p");
+    document.querySelector('.prodF').appendChild(prodF);
+    prodF.innerHTML = `<strong>---</strong>`;
+    const powProdF = document.createElement("p");
+    document.querySelector('.powProdF').appendChild(powProdF);
+    powProdF.innerHTML = `<strong>${powProdFSum.toFixed(4)}</strong>`;
 }
 
 let tMinusTab = [];
-let tMinusSum = [];
+let tMinusSum = 0;
 let tAvg = 0;
 function tMinusTAvg(){
     tAvg = tSum/m;
@@ -148,4 +171,7 @@ function tMinusTAvg(){
         document.querySelector('.tMinusTAvg').appendChild(tMinusT);
         tMinusT.innerHTML = tMinusTab[i].toFixed(4);
     }
+    const tMinusT = document.createElement("p");
+    document.querySelector('.tMinusTAvg').appendChild(tMinusT);
+    tMinusT.innerHTML = `<strong>${tMinusSum.toFixed(4)}</strong>`;
 }
